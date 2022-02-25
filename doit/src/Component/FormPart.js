@@ -17,7 +17,7 @@ export default function FormPart() {
         })
 
     }
-    const LoginHandler=()=>{
+    const LoginHandler=(e)=>{
         e.preventdefault()
         axios.post('http://localhost:5000/api/add',Login).then((response)=>{
             console.log(response.data.data)
