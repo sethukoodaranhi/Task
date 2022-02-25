@@ -3,7 +3,7 @@ const logindb=require('../model/login')
 const router=express.Router()
 router.post('/add',(req,res)=>{
     const data={
-        username:req.body.name,
+        username:req.body.username,
         password:req.body.password
     }
     const logindata=logindb(data)
