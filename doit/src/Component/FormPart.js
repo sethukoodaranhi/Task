@@ -18,10 +18,10 @@ export default function FormPart() {
 
     }
     const LoginHandler=(e)=>{
-        e.preventdefault()
+        e.preventDefault();
         axios.post('http://localhost:5000/api/add',Login).then((response)=>{
             console.log(response.data.data)
-            localStorage.setItem('userdetail',JSON.stringify(response.data.data))
+            localStorage.setItem('userdetail',JSON.stringify(response.data.data.username))
             navigate('/home')
         })
 
@@ -29,12 +29,12 @@ export default function FormPart() {
     }
     
     return (
-        <div >
+        <div className='pt-5' >
             <center>
                 <div >
                     <div className='conatiner mt-5' style={{ width: '30%', height: '30%' ,background:'rgb(162, 164, 166,0.7)',borderRadius:'15px'}}>
-                        <div>
-                        <h4>User Login</h4>
+                        <div className='ms-3 me-3'>
+                        <h4 className='pt-1'>User Login</h4>
                         <label>Enter user name&password to Login</label>
                         <>
                             <FloatingLabel
@@ -48,7 +48,7 @@ export default function FormPart() {
                             <FloatingLabel controlId="floatingPassword" label="Password">
                                 <Form.Control type="password"  placeholder="password"  name='password' onChange={ Loginchange}/>
                             </FloatingLabel>
-                            <Button variant="warning" className='mt-2' size="lg" type='submit' onClick={LoginHandler}>Login</Button>{' '}
+                            <Button variant="warning" className='mt-2 mb-3 w-75' size="lg" type='submit'  onClick={LoginHandler}>Login</Button>{' '}
                         </>
                         </div>
                     </div>

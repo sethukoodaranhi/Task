@@ -1,0 +1,7 @@
+*{
+    margin:0
+}
+.Loginpage{
+    background-image:url(../../public/images/bg.jpg);
+    height:100vh;
+}
